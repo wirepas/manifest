@@ -8,15 +8,15 @@
     Your sources have been sync'd successfully.
   </notice>
 
-  <project name="wirepas/gateway"
+  <project name="gateway"
            groups="gateway"
            path="." />
 
-  <project name="wirepas/backend-apis"
+  <project name="backend-apis"
            groups="apis"
            path="public-apis" />
 
-  <project name="wirepas/c-mesh-api"
+  <project name="c-mesh-api"
            groups="apis"
            path="sink_service/c-mesh-api" />
 
