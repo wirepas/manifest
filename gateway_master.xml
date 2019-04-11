@@ -18,7 +18,7 @@
 
   <project name="wirepas/c-mesh-api"
            groups="apis"
-           path="sink-service/c-mesh-api" />
+           path="sink_service/c-mesh-api" />
 
 </manifest>
 
