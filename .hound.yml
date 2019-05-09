@@ -2,9 +2,9 @@ flake8:
   enabled: true
   config_file: .flake8
 
-
 remark:
   enabled: true
 
 shellcheck:
   enabled: true
+  config_file: .shellcheck.yml

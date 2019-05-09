@@ -41,6 +41,7 @@ repos:
     rev: 1.0.4
     hooks:
       - id: shell-lint
+        args: ['x']
 
 -   repo: https://github.com/ambv/black
     rev: 19.3b0
