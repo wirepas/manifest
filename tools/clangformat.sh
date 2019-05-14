@@ -6,7 +6,8 @@ set -e
 function clangformat_version
 {
     _target_version="${1}"
-    _major=$(clang-format -version \
+    cmd="clang-format-${_target_version}"
+    _major=$(eval "$cmd -version" \
             | awk '{split($0,a," "); print a[3]}' \
             | awk '{split($0,a,"."); print a[1]}')
 
@@ -19,21 +20,25 @@ function clangformat_version
 
 function clangformat_check
 {
-    TARGET_CLANG_FORMAT=${1:-"7"}
-    clangformat_version "${TARGET_CLANG_FORMAT}"
+    _target_version=${1:-"7"}
+    clangformat_version "${_target_version}"
 
+    cmd="clang-format-${_target_version}"
     _file_list=$(find . -type f \( -name "*.c" -o -name "*.h" \))
 
     ret=0
     for _file in ${_file_list}
     do
-        #shellcheck disable=SC2094
-      _lines=$(clang-format -style=file < "${_file}" | diff "${_file}" - | wc -l)
-      echo "$_file : $_lines"
-
+      #shellcheck disable=SC2094
+      run="$cmd -style=file < ${_file} | diff ${_file} - "
+      _lines=$(eval "${run}" | wc -l)
+      echo "${_file} : ${_lines}"
       if (( "${_lines}" > 0 ))
       then
+        echo "please fix ${_lines} issues in ${_file} with:"
+        eval "${run}" || true
         ((ret=ret+_lines))
+        echo -e "\n"
       fi
     done
 
@@ -43,14 +48,15 @@ function clangformat_check
 
 function clangformat_apply
 {
-    TARGET_CLANG_FORMAT=${1:-"7"}
+    _target_version=${1:-"7"}
+    cmd="clang-format-${_target_version}"
 
     _file_list=$(find . -type f \( -name "*.c" -o -name "*.h" \))
 
     for _file in ${_file_list}
     do
       echo "formatting $_file"
-      clang-format -style=file -i "$_file"
+      eval "$cmd -style=file -i $_file"
     done
 }
 
