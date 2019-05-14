@@ -11,13 +11,14 @@ function clangformat_version
     CLANG_CMD="clang-format-${_target_version}"
 
     set +e
-    rc=$("$CLANG_CMD" -h ) || ""
+    rc=$(command -v "${CLANG_CMD}")
+    set -e
+
     if [[ -z "${rc}" ]]
     then
-      echo "using clang-format"
       CLANG_CMD="clang-format"
     fi
-    set -e
+
 
     _major=$(eval "$CLANG_CMD -version" \
             | awk '{split($0,a," "); print a[3]}' \
