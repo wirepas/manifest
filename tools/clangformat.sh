@@ -3,9 +3,11 @@
 
 set -e
 
+DEFAULT_CLANG_VERSION="7"
+
 function clangformat_version
 {
-    _target_version="${1}"
+    _target_version=${1:-"${DEFAULT_CLANG_VERSION}"}
     cmd="clang-format-${_target_version}"
     _major=$(eval "$cmd -version" \
             | awk '{split($0,a," "); print a[3]}' \
@@ -20,7 +22,7 @@ function clangformat_version
 
 function clangformat_check
 {
-    _target_version=${1:-"7"}
+    _target_version=${1:-"${DEFAULT_CLANG_VERSION}"}
     clangformat_version "${_target_version}"
 
     cmd="clang-format-${_target_version}"
@@ -38,7 +40,7 @@ function clangformat_check
         echo "please fix ${_lines} issues in ${_file} with:"
         eval "${run}" || true
         ((ret=ret+_lines))
-        echo -e "\n"
+        echo ""
       fi
     done
 
@@ -48,7 +50,7 @@ function clangformat_check
 
 function clangformat_apply
 {
-    _target_version=${1:-"7"}
+    _target_version=${1:-"${DEFAULT_CLANG_VERSION}"}
     cmd="clang-format-${_target_version}"
 
     _file_list=$(find . -type f \( -name "*.c" -o -name "*.h" \))
@@ -59,5 +61,3 @@ function clangformat_apply
       eval "$cmd -style=file -i $_file"
     done
 }
-
-
