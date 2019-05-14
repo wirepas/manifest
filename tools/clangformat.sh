@@ -19,7 +19,6 @@ function clangformat_version
       CLANG_CMD="clang-format"
     fi
 
-
     _major=$(eval "$CLANG_CMD -version" \
             | awk '{split($0,a," "); print a[3]}' \
             | awk '{split($0,a,"."); print a[1]}')
