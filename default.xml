@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <include name="gateway_master.xml" />
+  <include name="gateway.xml" />
 </manifest>
-  
