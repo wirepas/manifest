@@ -56,7 +56,7 @@ function clangformat_check
     done
 
     echo "Found $ret issues"
-    exit "$ret"
+    return "$ret"
 }
 
 function clangformat_apply
