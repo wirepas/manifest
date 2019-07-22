@@ -13,11 +13,6 @@
            revision="refs/tags/v1.2.0-rc.1"
            path="." />
 
-  <project name="backend-apis"
-           groups="apis"
-           revision="refs/tags/v1.2.0-rc.3"
-           path="public-apis"/>
-
   <project name="c-mesh-api"
            groups="apis"
            revision="refs/tags/v1.2.0-rc.1"
