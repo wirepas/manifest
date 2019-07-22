@@ -10,7 +10,7 @@
 
   <project name="gateway"
            groups="gateway"
-           revision="refs/tags/v1.2.0-rc.1"
+           revision="refs/tags/v1.2.0-rc.2"
            path="." />
 
   <project name="c-mesh-api"
