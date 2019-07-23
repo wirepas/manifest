@@ -1,23 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <include name="_remotes.xml" />
-  <default revision="refs/heads/master"
-           remote="github"
-           sync-j="4" />
-  <notice>
-    Your sources have been sync'd successfully.
-  </notice>
 
-  <project name="gateway"
-           groups="gateway"
-           path="." />
+  <include name=".remotes.xml" />
 
-  <project name="backend-apis"
-           groups="apis"
-           path="public-apis" />
-
-  <project name="c-mesh-api"
-           groups="apis"
-           path="sink_service/c-mesh-api" />
+  <project name="gateway" revision="refs/tags/v1.2.0-rc.2" path="." groups="gateway" />
+  <project name="c-mesh-api" revision="refs/tags/v1.2.0-rc.1" path="sink_service/c-mesh-api" groups="gateway, dualmcu"/>
+  <include name=".citools.xml" revision="refs/heads/master" />
 
 </manifest>
