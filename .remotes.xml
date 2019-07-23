@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+    <remote name="github"
+            fetch="https://github.com/wirepas"
+            pushurl="git@github.com:wirepas" />
+
+    <default revision="refs/heads/master"
+             upstream="refs/heads/master"
+             remote="github"
+             dest-branch="dev"
+             sync-s="true"
+             sync-c="true"
+             sync-tags="true"
+             sync-j="4" />
+</manifest>

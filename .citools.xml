@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+<project name="manifest" path=".ci/manifest" clone-depth="1" groups="ci" >
+      <linkfile src=".clang-format" dest=".clang-format" />
+      <linkfile src=".pre-commit-config.yaml" dest=".pre-commit-config.yaml" />
+      <linkfile src=".flake8" dest=".flake8" />
+      <linkfile src=".shellcheck" dest=".shellcheck" />
+      <linkfile src="dev-requirements.txt" dest="dev-requirements.txt" />
+  </project>
+</manifest>

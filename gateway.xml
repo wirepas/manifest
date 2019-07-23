@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <include name="_remotes.xml" />
+  <include name=".remotes.xml" />
   <default revision="refs/heads/master"
            remote="github"
            sync-j="4" />
   <notice>
-    Your sources have been sync'd successfully.
+    This file will be removed, please use gateway/dev.xml or gateway/stable.xml instead.
   </notice>
 
   <project name="gateway"
            groups="gateway"
            path="." />
-
-  <project name="backend-apis"
-           groups="apis"
-           path="public-apis" />
 
   <project name="c-mesh-api"
            groups="apis"
