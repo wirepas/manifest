@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <include name=".remotes.xml" />
+  <project name="gateway" path="." groups="gateway" />
+
+  <project name="c-mesh-api" path="sink_service/c-mesh-api" groups="gateway, dualmcu"/>
+  <include name=".citools.xml" />
+
+
+</manifest>
