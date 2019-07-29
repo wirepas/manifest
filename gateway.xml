@@ -10,12 +10,12 @@
 
   <project name="gateway"
            groups="gateway"
-           revision="refs/tags/v1.2.0-rc.2"
+           revision="refs/tags/v1.2.0"
            path="." />
 
   <project name="c-mesh-api"
            groups="apis"
-           revision="refs/tags/v1.2.0-rc.1"
+           revision="refs/tags/v1.2.0"
            path="sink_service/c-mesh-api" />
 
 </manifest>
