@@ -3,7 +3,7 @@ flake8==3.7.8
 pre-commit==1.18.3
 pytest==5.1.2
 Sphinx==2.2.0
-grpcio-tools==1.22.0
+grpcio-tools==1.23.0
 twine==1.13.0
 wheel==0.33.6
 setuptools==41.2.0
