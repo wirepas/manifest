@@ -3,7 +3,7 @@ flake8:
   config_file: .flake8
 
 remark:
-  enabled: true
+  enabled: false
 
 shellcheck:
   enabled: true
