@@ -2,7 +2,7 @@ black==19.3b0
 flake8==3.7.9
 pre-commit==1.20.0
 pytest==5.1.2
-Sphinx==2.2.0
+Sphinx==2.2.1
 grpcio-tools==1.23.0
 twine==2.0.0
 wheel==0.33.6
