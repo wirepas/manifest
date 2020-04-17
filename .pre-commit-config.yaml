@@ -32,6 +32,17 @@ repos:
           files: \.(c|cc|cxx|cpp|frag|glsl|h|hpp|hxx|ih|ispc|ipp|java|js|m|proto|vert)$
           args: ['-style=file', '-i']
 
+-   repo: https://github.com/pocc/pre-commit-hooks
+    rev: master
+    hooks:
+      - id: clang-tidy
+        args: [-checks=*, -warnings-as-errors=*]
+
+-   repo: https://gitlab.com/daverona-env/pre-commit-cpp
+    rev: 0.6.0          # use the most recent version
+    hooks:
+      - id: cppcheck      # static analyzer of C/C++ code
+      
 -   repo: https://github.com/pryorda/dockerfilelint-precommit-hooks
     rev: v0.1.0
     hooks:
